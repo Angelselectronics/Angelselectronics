@@ -5,8 +5,6 @@ backend:
 media_folder: "images/uploads"
 public_folder: "/images/uploads"
 
-publish_mode: editorial_workflow
-
 collections:
   - name: "site"
     label: "Site Content"
@@ -18,8 +16,3 @@ collections:
           - { label: "Business Name", name: "businessName", widget: "string" }
           - { label: "Phone", name: "phone", widget: "string" }
           - { label: "Booking URL", name: "bookingUrl", widget: "string" }
-          - label: "Gallery"
-            name: "gallery"
-            widget: "list"
-            fields:
-              - { label: "Image", name: "image", widget: "image" }
