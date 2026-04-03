@@ -1,5 +1,56 @@
 {
   "businessName": "Angels Electronics",
-  "phone": "(323) 235-2753",
-  "bookingUrl": "https://book.squareup.com/appointments/elp1it4y18zll9/location/L0P3BMZRSSGV8/services?utm_source=ig&utm_medium=social&utm_content=link_in_bio"
+
+  "phoneMain": "(323) 235-2753",
+  "phoneText": "(323) 617-1693",
+  "email": "Angelselectronic@yahoo.com",
+  "instagram": "https://instagram.com/angels_electronics",
+
+  "bookingUrl": "https://book.squareup.com/appointments/elp1it4y18zll9/location/L0P3BMZRSSGV8/services?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
+
+  "location": "Los Angeles, CA",
+
+  "services": [
+    "Window Tint",
+    "Car Audio Systems",
+    "Viper Alarm Systems",
+    "Lighting & LED Installs",
+    "Car Wrap",
+    "Paint Protection Film (PPF)"
+  ],
+
+  "brands": [
+    "Solar Gard",
+    "Rayno",
+    "JL Audio",
+    "Memphis",
+    "DS18",
+    "Viper"
+  ],
+
+  "heroText": "Premium Car Electronics & Window Tint Installation",
+  "subText": "Clean installs. Aggressive style. Professional finish.",
+
+  "reviews": [
+    {
+      "name": "krhistian rodriguez",
+      "text": "Been going to Angels electronics for many years, good customer service,excellent prices,quality work "
+    },
+    {
+      "name": "German Bonilla",
+      "text": "Best place to get your sound and lights installed also window tint by robert hands down. love it"
+    }
+  ],
+
+  "gallery": [
+    {
+      "image": "images/uploads/editor-gallery-1.jpeg"
+    },
+    {
+      "image": "images/uploads/editor-gallery-2.jpeg"
+    },
+    {
+      "image": "images/uploads/editor-gallery-3.jpeg"
+    }
+  ]
 }
