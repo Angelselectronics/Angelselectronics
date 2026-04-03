@@ -43,29 +43,12 @@
     }
   ],
   "gallery": [
-    {
-      "image": "images/uploads/editor-gallery-1.jpeg",
-      "caption": "Editor Gallery 1"
-    },
-    {
-      "image": "images/uploads/editor-gallery-2.jpeg",
-      "caption": "Editor Gallery 2"
-    },
-    {
-      "image": "images/uploads/editor-gallery-3.jpeg",
-      "caption": "Editor Gallery 3"
-    },
-    {
-      "image": "images/uploads/editor-gallery-4.jpeg",
-      "caption": "Editor Gallery 4"
-    },
-    {
-      "image": "images/uploads/editor-gallery-5.jpeg",
-      "caption": "Editor Gallery 5"
-    },
-    {
-      "image": "images/uploads/editor-gallery-6.jpeg",
-      "caption": "Editor Gallery 6"
-    }
-  ]
-}
+  { "image": "editor-gallery-1.jpeg" },
+  { "image": "editor-gallery-2.jpeg" },
+  { "image": "editor-gallery-3.jpeg" },
+  { "image": "editor-gallery-4.jpeg" },
+  { "image": "editor-gallery-5.jpeg" },
+  { "image": "editor-gallery-6.jpeg" },
+  { "image": "editor-gallery-7.jpeg" },
+  { "image": "editor-gallery-8.jpeg" }
+] 
