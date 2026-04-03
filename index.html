@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Angels Electronics</title>
+  <meta name="theme-color" content="#090d12" />
+  <style>
+    :root{
+      --bg:#090d12; --bg2:#101720; --panel:rgba(255,255,255,.05); --panel2:rgba(255,255,255,.03);
+      --text:#f4f7fb; --muted:#afbbca; --line:rgba(255,255,255,.10); --red:#e11d2f; --blue:#68b8ff;
+      --gold:#ffca57; --shadow:0 20px 60px rgba(0,0,0,.38); --radius:24px; --max:1180px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:
+      radial-gradient(circle at top left, rgba(104,184,255,.14), transparent 28%),
+      radial-gradient(circle at top right, rgba(225,29,47,.12), transparent 24%),
+      linear-gradient(180deg,#06090d,#0b1017 34%,#101720);}
+    img{display:block;max-width:100%} a{text-decoration:none;color:inherit}
+    .container{width:min(var(--max),92%);margin:0 auto}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;min-height:54px;border-radius:16px;border:1px solid var(--line);font-weight:800;transition:.18s ease}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 10px 30px rgba(0,0,0,.25)}
+    .btn-primary{background:linear-gradient(180deg,#f03445,#c81828);color:#fff}
+    .btn-secondary{background:rgba(255,255,255,.04)}
+    header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(6,10,15,.76);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand img{width:48px;height:48px;object-fit:cover;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .brand-name{font-weight:900;text-transform:uppercase;line-height:1.02;letter-spacing:.7px}
+    .brand-name small{display:block;color:var(--blue);font-size:.72rem;letter-spacing:1.4px;margin-top:4px}
+    nav ul{display:flex;list-style:none;gap:18px;margin:0;padding:0;color:var(--muted)}
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.06)}
+    .hero-bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.25;filter:saturate(1.02) contrast(1.02)}
+    .hero-overlay{position:absolute;inset:0;background:linear-gradient(rgba(6,9,14,.74), rgba(6,9,14,.90))}
+    .hero-inner{position:relative;z-index:1;padding:86px 0 72px;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center}
+    .eyebrow{display:inline-block;color:var(--blue);font-size:.8rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+    h1{margin:0 0 16px;font-size:clamp(2.8rem,7vw,5.8rem);line-height:.93;text-transform:uppercase}
+    .lead{margin:0;max-width:720px;color:var(--muted);font-size:1.08rem}
+    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow)}
+    .hero-card{padding:24px}
+    .hero-card h2{margin:0 0 14px;font-size:1rem;text-transform:uppercase;letter-spacing:1px}
+    .mini-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+    .mini{padding:16px;border-radius:18px;border:1px solid rgba(255,255,255,.06);background:rgba(255,255,255,.03)}
+    .mini strong{display:block;font-size:1.2rem;margin-bottom:6px}
+    .info-strip{margin-top:-24px;position:relative;z-index:2}
+    .info-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+    .info-card{padding:18px}
+    .label{display:block;color:var(--blue);font-size:.72rem;font-weight:900;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+    .value{font-size:1rem;font-weight:800;word-break:break-word}
+    section{padding:78px 0}
+    .section-head{margin-bottom:28px}
+    .section-head h2{margin:0 0 10px;font-size:clamp(1.8rem,4vw,2.8rem);text-transform:uppercase}
+    .section-head p{margin:0;color:var(--muted);max-width:760px}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+    .service-card{padding:22px}
+    .service-card h3{margin:0 0 10px;font-size:1.05rem;text-transform:uppercase}
+    .service-card p{margin:0;color:var(--muted)}
+    .brand-row{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+    .chip{padding:10px 14px;border-radius:999px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.08);font-weight:800;color:#d8e2ee}
+    .gallery-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+    .gallery-card{overflow:hidden}
+    .gallery-card img{width:100%;aspect-ratio:4/5;object-fit:cover}
+    .gallery-caption{padding:14px 16px 16px;font-weight:800;text-transform:uppercase;font-size:.92rem;letter-spacing:.35px}
+    .reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+    .review-card{padding:22px}
+    .review-top{display:flex;justify-content:space-between;gap:14px;align-items:flex-start;margin-bottom:12px}
+    .review-top h3{margin:0 0 6px;font-size:1rem}
+    .stars{color:var(--gold);font-weight:900;white-space:nowrap}
+    .review-card p{margin:0;color:#edf2f7;line-height:1.6}
+    .business-grid{display:grid;grid-template-columns:1fr .95fr;gap:20px}
+    .contact-card,.booking-card{padding:26px}
+    .stack{display:grid;gap:14px}
+    .map{width:100%;height:320px;border:0;border-radius:22px;margin-top:16px}
+    footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 40px;color:var(--muted);font-size:.94rem}
+    @media (max-width:1020px){nav ul{display:none}.hero-inner,.business-grid{grid-template-columns:1fr}.service-grid,.gallery-grid,.info-grid,.reviews-grid{grid-template-columns:1fr 1fr}}
+    @media (max-width:680px){section{padding:58px 0}.hero-inner{padding:58px 0 52px}.cta-row{flex-direction:column}.btn{width:100%}.mini-grid,.service-grid,.gallery-grid,.info-grid,.reviews-grid{grid-template-columns:1fr}h1{font-size:2.5rem}.hero-card,.service-card,.review-card,.contact-card,.booking-card{padding:18px}}
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <img src="images/logo.png" alt="Logo">
+        <div class="brand-name"><span id="businessName"></span><small id="locationSmall"></small></div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#booking">Book</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img id="heroImage" class="hero-bg" src="" alt="Hero">
+      <div class="hero-overlay"></div>
+      <div class="container hero-inner">
+        <div>
+          <span class="eyebrow">Tint • Audio • Wrap • PPF • Alarms • Lights</span>
+          <h1 id="heroText"></h1>
+          <p class="lead" id="subText"></p>
+          <div class="cta-row">
+            <a class="btn btn-primary" id="callBtn" href="#">Call Now</a>
+            <a class="btn btn-secondary" id="textBtn" href="#">Text for Quote</a>
+            <a class="btn btn-secondary" id="bookBtnHero" href="#" target="_blank" rel="noopener">Book Appointment</a>
+            <a class="btn btn-secondary" id="igBtn" href="#" target="_blank" rel="noopener">Instagram</a>
+          </div>
+        </div>
+        <aside class="card hero-card">
+          <h2>Why customers choose Angels</h2>
+          <div class="mini-grid">
+            <div class="mini"><strong>Real Work</strong>Actual customer photos in the gallery</div>
+            <div class="mini"><strong>Fast Contact</strong>Call, text, book, or DM quickly</div>
+            <div class="mini"><strong>Premium Look</strong>Sharper layout for a stronger first impression</div>
+            <div class="mini"><strong>Mobile Ready</strong>Designed to look clean on phones</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="info-strip">
+      <div class="container info-grid" id="infoGrid"></div>
+    </div>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Services</h2>
+          <p>High-impact installs and clean finishes for daily drivers and custom builds.</p>
+        </div>
+        <div class="service-grid" id="servicesGrid"></div>
+        <div class="brand-row" id="brandsRow"></div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <h2>Gallery</h2>
+          <p>Real work from Angels Electronics.</p>
+        </div>
+        <div class="gallery-grid" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <h2>Customer Reviews</h2>
+          <p>Real feedback from customers who trusted Angels with their vehicles.</p>
+        </div>
+        <div class="reviews-grid" id="reviewsGrid"></div>
+      </div>
+    </section>
+
+    <section id="booking">
+      <div class="container business-grid">
+        <div class="card booking-card">
+          <div class="section-head">
+            <h2>Book Appointment</h2>
+            <p>Reserve your service through Square, or contact the shop directly.</p>
+          </div>
+          <div class="stack">
+            <a class="btn btn-primary" id="bookBtnSection" href="#" target="_blank" rel="noopener">Open Booking Calendar</a>
+            <a class="btn btn-secondary" id="callBtn2" href="#">Call to Book</a>
+            <a class="btn btn-secondary" id="textBtn2" href="#">Text to Book</a>
+          </div>
+        </div>
+        <div class="card contact-card">
+          <div class="section-head">
+            <h2>Location</h2>
+            <p id="locationText"></p>
+          </div>
+          <iframe id="map" class="map" loading="lazy" src=""></iframe>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container business-grid">
+        <div class="card contact-card">
+          <div class="section-head">
+            <h2>Contact</h2>
+            <p>Quick ways for customers to reach you.</p>
+          </div>
+          <div class="stack" id="contactStack"></div>
+        </div>
+        <div class="card contact-card">
+          <div class="section-head">
+            <h2>Need a quick quote?</h2>
+            <p>Text the booking line with your vehicle year, make, model, and the service you want.</p>
+          </div>
+          <div class="stack">
+            <a class="btn btn-primary" id="quoteTextBtn" href="#">Text for Quote</a>
+            <a class="btn btn-secondary" id="quoteEmailBtn" href="#">Email the Shop</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 <span id="footerName"></span>. All rights reserved.</div>
+  </footer>
+
+  <script>
+    fetch('content/site.json')
+      .then(r => r.json())
+      .then(data => {
+        const phoneDigits = (data.phoneMain || '').replace(/\D/g, '');
+        const textDigits = (data.phoneText || '').replace(/\D/g, '');
+        const instaUrl = data.instagram || '#';
+        const gallery = data.gallery || [];
+        const services = data.services || [];
+        const reviews = data.reviews || [];
+        const brands = data.brands || [];
+
+        document.getElementById('businessName').textContent = data.businessName || 'Angels Electronics';
+        document.getElementById('footerName').textContent = data.businessName || 'Angels Electronics';
+        document.getElementById('locationSmall').textContent = data.location || 'Los Angeles';
+        document.getElementById('heroText').textContent = data.heroText || 'Premium Car Electronics & Tint Installation';
+        document.getElementById('subText').textContent = data.subText || '';
+        document.getElementById('locationText').textContent = data.location || '';
+        if (gallery[0] && gallery[0].image) document.getElementById('heroImage').src = gallery[0].image;
+        document.getElementById('map').src = 'https://www.google.com/maps?q=' + encodeURIComponent(data.location || '') + '&output=embed';
+
+        const setLink = (id, href, text) => {
+          const el = document.getElementById(id);
+          el.href = href;
+          if (text) el.textContent = text;
+        };
+
+        setLink('callBtn', 'tel:' + phoneDigits, 'Call ' + (data.phoneMain || 'Now'));
+        setLink('callBtn2', 'tel:' + phoneDigits, 'Call to Book');
+        setLink('textBtn', 'sms:' + textDigits, 'Text ' + (data.phoneText || 'Now'));
+        setLink('textBtn2', 'sms:' + textDigits, 'Text to Book');
+        setLink('bookBtnHero', data.bookingUrl || '#', 'Book Appointment');
+        setLink('bookBtnSection', data.bookingUrl || '#', 'Open Booking Calendar');
+        setLink('igBtn', instaUrl, 'Instagram');
+        setLink('quoteTextBtn', 'sms:' + textDigits, 'Text for Quote');
+        setLink('quoteEmailBtn', 'mailto:' + (data.email || ''), 'Email the Shop');
+
+        document.getElementById('infoGrid').innerHTML = [
+          ['Phone', '<a href="tel:' + phoneDigits + '">' + (data.phoneMain || '') + '</a>'],
+          ['Text', '<a href="sms:' + textDigits + '">' + (data.phoneText || '') + '</a>'],
+          ['Email', '<a href="mailto:' + (data.email || '') + '">' + (data.email || '') + '</a>'],
+          ['Location', data.location || '']
+        ].map(([label, value]) => '<div class="card info-card"><span class="label">' + label + '</span><span class="value">' + value + '</span></div>').join('');
+
+        document.getElementById('servicesGrid').innerHTML = services.map(s => '<article class="card service-card"><h3>' + s + '</h3><p>Professional installation with a clean finish built to match the Angels Electronics style.</p></article>').join('');
+        document.getElementById('brandsRow').innerHTML = brands.map(b => '<span class="chip">' + b + '</span>').join('');
+        document.getElementById('galleryGrid').innerHTML = gallery.map((g, i) => '<figure class="card gallery-card"><img src="' + g.image + '" alt="' + (g.caption || ('Gallery image ' + (i+1))) + '"><figcaption class="gallery-caption">' + (g.caption || 'Angels Electronics Work') + '</figcaption></figure>').join('');
+        document.getElementById('reviewsGrid').innerHTML = reviews.map(r => '<article class="card review-card"><div class="review-top"><div><h3>' + (r.name || 'Customer') + '</h3></div><div class="stars">★★★★★</div></div><p>' + (r.text || '') + '</p></article>').join('');
+        document.getElementById('contactStack').innerHTML = [
+          ['Call', 'tel:' + phoneDigits, data.phoneMain || ''],
+          ['Text', 'sms:' + textDigits, data.phoneText || ''],
+          ['Email', 'mailto:' + (data.email || ''), data.email || ''],
+          ['Instagram', instaUrl, '@' + ((instaUrl.split('/').filter(Boolean).pop()) || 'angels_electronics')]
+        ].map(([label, href, text]) => '<a class="btn btn-secondary" href="' + href + '"' + (label === 'Instagram' ? ' target="_blank" rel="noopener"' : '') + '>' + label + ': ' + text + '</a>').join('');
+      });
+  </script>
+</body>
+</html>

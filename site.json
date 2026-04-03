@@ -1,0 +1,71 @@
+{
+  "businessName": "Angels Electronics",
+  "phoneMain": "(323) 235-2753",
+  "phoneText": "(323) 617-1693",
+  "email": "Angelselectronic@yahoo.com",
+  "instagram": "https://instagram.com/angels_electronics",
+  "bookingUrl": "https://book.squareup.com/appointments/elp1it4y18zll9/location/L0P3BMZRSSGV8/services?utm_source=ig&utm_medium=social&utm_content=link_in_bio",
+  "location": "1765 E 45th St, Los Angeles, CA 90058",
+  "services": [
+    "Window Tint",
+    "Car Audio Systems",
+    "Viper Alarm Systems",
+    "Lighting & LED Installs",
+    "Car Wrap",
+    "Paint Protection Film (PPF)"
+  ],
+  "brands": [
+    "Solar Gard",
+    "Rayno",
+    "JL Audio",
+    "Memphis",
+    "DS18",
+    "Viper"
+  ],
+  "heroText": "Premium Car Electronics & Tint Installation",
+  "subText": "Clean installs. Aggressive style. Professional finish.",
+  "reviews": [
+    {
+      "name": "David Martinez",
+      "text": "Recomiendo este lugar si tienes alguna falla el\u00e9ctrica tambi\u00e9n pueden ayudarte. Trabajo limpio y organizado."
+    },
+    {
+      "name": "Jonathan Benitez",
+      "text": "Good service, polite, professional, and reasonable pricing. Highly recommend."
+    },
+    {
+      "name": "Kaylen",
+      "text": "Installed my headlights and bumper fast. Super helpful definitely recommend."
+    },
+    {
+      "name": "Khristian Rodriguez",
+      "text": "Been going for years. Good customer service, excellent prices, quality work."
+    }
+  ],
+  "gallery": [
+    {
+      "image": "images/uploads/editor-gallery-1.jpeg",
+      "caption": "Editor Gallery 1"
+    },
+    {
+      "image": "images/uploads/editor-gallery-2.jpeg",
+      "caption": "Editor Gallery 2"
+    },
+    {
+      "image": "images/uploads/editor-gallery-3.jpeg",
+      "caption": "Editor Gallery 3"
+    },
+    {
+      "image": "images/uploads/editor-gallery-4.jpeg",
+      "caption": "Editor Gallery 4"
+    },
+    {
+      "image": "images/uploads/editor-gallery-5.jpeg",
+      "caption": "Editor Gallery 5"
+    },
+    {
+      "image": "images/uploads/editor-gallery-6.jpeg",
+      "caption": "Editor Gallery 6"
+    }
+  ]
+}
