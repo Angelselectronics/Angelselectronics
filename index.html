@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Angels Electronics</title>
+  <meta name="theme-color" content="#0b0f16">
+  <style>
+    :root {
+      --bg:#0b0f16; --bg2:#101621; --panel:rgba(255,255,255,.045); --panel2:rgba(255,255,255,.03);
+      --text:#f5f7fb; --muted:#adbacd; --line:rgba(255,255,255,.10); --blue:#63b3ff; --red:#e32130;
+      --gold:#ffc84d; --radius:24px; --shadow:0 20px 60px rgba(0,0,0,.36); --max:1180px;
+    }
+    *{box-sizing:border-box} html{scroll-behavior:smooth}
+    body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--text);background:
+      radial-gradient(circle at top left, rgba(99,179,255,.14), transparent 30%),
+      radial-gradient(circle at top right, rgba(227,33,48,.12), transparent 24%),
+      linear-gradient(180deg,#070a10 0%,#0b0f16 35%,#101621 100%);}
+    img{display:block;max-width:100%} a{color:inherit;text-decoration:none}
+    .container{width:min(var(--max),92%);margin:0 auto}
+    header{position:sticky;top:0;z-index:60;background:rgba(7,10,16,.78);backdrop-filter:blur(14px);border-bottom:1px solid rgba(255,255,255,.06)}
+    .nav{display:flex;justify-content:space-between;align-items:center;gap:20px;padding:14px 0}
+    .brand{display:flex;align-items:center;gap:12px;min-width:0}
+    .brand img{width:46px;height:46px;object-fit:cover;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .brand-name{font-weight:900;text-transform:uppercase;letter-spacing:.7px;line-height:1.05}
+    .brand-name small{display:block;color:var(--blue);font-size:.72rem;margin-top:4px;letter-spacing:1.4px}
+    nav ul{display:flex;gap:18px;list-style:none;padding:0;margin:0;color:var(--muted);font-size:.95rem}
+    .hero{position:relative;overflow:hidden;border-bottom:1px solid rgba(255,255,255,.05)}
+    .hero::before{content:"";position:absolute;inset:0;background:linear-gradient(rgba(6,9,14,.72), rgba(6,9,14,.9));opacity:.8}
+    .hero-bg{position:absolute;inset:0;object-fit:cover;width:100%;height:100%;opacity:.38}
+    .hero-inner{position:relative;z-index:1;display:grid;grid-template-columns:1.15fr .85fr;gap:28px;align-items:center;padding:86px 0 72px}
+    .eyebrow{display:inline-block;color:var(--blue);font-size:.78rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
+    h1{margin:0 0 16px;font-size:clamp(2.7rem,7vw,5.7rem);line-height:.94;text-transform:uppercase}
+    .lead{margin:0;color:var(--muted);font-size:1.08rem;max-width:720px}
+    .cta-row{display:flex;gap:12px;flex-wrap:wrap;margin-top:28px}
+    .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:14px 22px;border-radius:16px;font-weight:800;border:1px solid var(--line);transition:.18s ease}
+    .btn:hover{transform:translateY(-1px);box-shadow:0 10px 28px rgba(0,0,0,.24)}
+    .btn-primary{background:linear-gradient(180deg,#f13746,#c91828);color:#fff}
+    .btn-secondary{background:rgba(255,255,255,.04)}
+    .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);box-shadow:var(--shadow);border-radius:28px;padding:24px}
+    .quick-grid,.info-grid,.services,.gallery-wrap,.reviews-grid,.faq-list{display:grid;gap:16px}
+    .quick-grid{grid-template-columns:1fr 1fr}
+    .quick-item{padding:16px;border:1px solid rgba(255,255,255,.07);border-radius:18px;background:rgba(255,255,255,.03)}
+    .quick-item strong{display:block;font-size:1.2rem;margin-bottom:6px}
+    .info-strip{margin-top:-24px;position:relative;z-index:2}
+    .info-grid{grid-template-columns:repeat(4,1fr)}
+    .info-card{padding:18px}
+    .label{display:block;font-size:.72rem;color:var(--blue);font-weight:900;letter-spacing:1px;text-transform:uppercase;margin-bottom:6px}
+    .value{font-size:1rem;font-weight:800;word-break:break-word}
+    section{padding:78px 0}
+    .section-head{margin-bottom:28px}
+    .section-head h2{margin:0 0 10px;font-size:clamp(1.8rem,4vw,2.8rem);text-transform:uppercase}
+    .section-head p{margin:0;color:var(--muted);max-width:780px}
+    .services{grid-template-columns:repeat(3,1fr)}
+    .service-card,.review-card,.gallery-card,.faq-item{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);box-shadow:var(--shadow)}
+    .service-card{padding:22px;border-radius:24px}
+    .service-card h3{margin:0 0 10px;font-size:1.04rem;text-transform:uppercase}
+    .service-card p{margin:0;color:var(--muted)}
+    .gallery-wrap{grid-template-columns:repeat(3,1fr)}
+    .gallery-card{margin:0;border-radius:24px;overflow:hidden;background:#0f141d}
+    .gallery-card img{width:100%;aspect-ratio:4/5;object-fit:cover}
+    .gallery-card figcaption{padding:14px 16px 16px;font-weight:800;font-size:.92rem;text-transform:uppercase;letter-spacing:.35px}
+    .reviews-grid{grid-template-columns:repeat(2,1fr)}
+    .review-card{padding:22px;border-radius:24px}
+    .review-head{display:flex;justify-content:space-between;gap:16px;align-items:flex-start;margin-bottom:12px}
+    .review-head h3{margin:0 0 6px;font-size:1.03rem}
+    .review-meta{color:var(--muted);font-size:.9rem}
+    .stars{color:var(--gold);font-weight:900;letter-spacing:1px;white-space:nowrap}
+    .review-card p{margin:0;line-height:1.6}
+    .two-col{display:grid;grid-template-columns:1fr .95fr;gap:20px}
+    .faq-card,.contact-card{padding:26px}
+    .faq-item{padding:16px 18px;border-radius:18px}
+    .faq-item strong{display:block;margin-bottom:8px}
+    iframe.map{width:100%;height:300px;border:0;border-radius:22px;margin-top:16px}
+    footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 40px;color:var(--muted);font-size:.94rem}
+    @media (max-width:1020px){
+      nav ul{display:none}.hero-inner,.two-col{grid-template-columns:1fr}
+      .services,.gallery-wrap,.info-grid,.reviews-grid{grid-template-columns:1fr 1fr}
+    }
+    @media (max-width:680px){
+      section{padding:58px 0}.hero-inner{padding:58px 0 52px}.cta-row{flex-direction:column}.btn{width:100%}
+      .quick-grid,.services,.gallery-wrap,.reviews-grid,.info-grid,.faq-list{grid-template-columns:1fr} h1{font-size:2.45rem}
+      .card,.service-card,.review-card,.faq-card,.contact-card{padding:18px}
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a class="brand" href="#top">
+        <img id="logo" src="/editor-logo.png" alt="Logo">
+        <div class="brand-name"><span id="brandName"></span><small>Los Angeles</small></div>
+      </a>
+      <nav>
+        <ul>
+          <li><a href="#services">Services</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#reviews">Reviews</a></li>
+          <li><a href="#booking">Book</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="/admin/">Edit</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="top">
+    <section class="hero">
+      <img id="heroImage" class="hero-bg" src="" alt="Hero">
+      <div class="container hero-inner">
+        <div>
+          <span class="eyebrow" id="eyebrow"></span>
+          <h1 id="tagline"></h1>
+          <p class="lead" id="description"></p>
+          <div class="cta-row">
+            <a class="btn btn-primary" id="callBtn" href="#">Call Now</a>
+            <a class="btn btn-secondary" id="textBtn" href="#">Text Now</a>
+            <a class="btn btn-secondary" id="instaBtn" href="#" target="_blank" rel="noopener">Instagram</a>
+            <a class="btn btn-secondary" id="bookBtnHero" href="#" target="_blank" rel="noopener">Book Appointment</a>
+          </div>
+        </div>
+        <aside class="card">
+          <h2 style="margin:0 0 14px;font-size:1rem;text-transform:uppercase;letter-spacing:1px">Lead-focused upgrades</h2>
+          <div class="quick-grid">
+            <div class="quick-item"><strong>Quote Form</strong>Edit contact info anytime</div>
+            <div class="quick-item"><strong>Text Button</strong>Separate text number</div>
+            <div class="quick-item"><strong>Map Section</strong>Address and directions</div>
+            <div class="quick-item"><strong>Social Proof</strong>Real reviews + real photos</div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <div class="info-strip">
+      <div class="container info-grid" id="infoGrid"></div>
+    </div>
+
+    <section id="services">
+      <div class="container">
+        <div class="section-head">
+          <h2>Services</h2>
+          <p>Edit these from the phone-friendly admin panel.</p>
+        </div>
+        <div class="services" id="servicesGrid"></div>
+      </div>
+    </section>
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <h2>Gallery</h2>
+          <p>Real work from Angels Electronics.</p>
+        </div>
+        <div class="gallery-wrap" id="galleryGrid"></div>
+      </div>
+    </section>
+
+    <section id="reviews">
+      <div class="container">
+        <div class="section-head">
+          <h2>Customer Reviews</h2>
+          <p>Update or add reviews from the editor.</p>
+        </div>
+        <div class="reviews-grid" id="reviewsGrid"></div>
+      </div>
+    </section>
+
+    <section id="booking">
+      <div class="container two-col">
+        <div class="card contact-card">
+          <div class="section-head">
+            <h2>Book Appointment</h2>
+            <p>Customers can book directly through your Square appointment page.</p>
+          </div>
+          <div class="cta-row">
+            <a class="btn btn-primary" id="bookBtnSection" href="#" target="_blank" rel="noopener">Open Booking Calendar</a>
+            <a class="btn btn-secondary" id="callBtn2" href="#">Call to Book</a>
+            <a class="btn btn-secondary" id="textBtn2" href="#">Text to Book</a>
+          </div>
+        </div>
+
+        <div class="card faq-card">
+          <div class="section-head">
+            <h2>FAQ</h2>
+            <p>Simple answers for common customer questions.</p>
+          </div>
+          <div class="faq-list" id="faqList"></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container two-col">
+        <div class="card contact-card">
+          <div class="section-head">
+            <h2>Location & Directions</h2>
+            <p>Customers can find you faster with the map built in.</p>
+          </div>
+          <div class="info-card" style="padding:0">
+            <span class="label">Address</span>
+            <span class="value" id="addressText"></span>
+          </div>
+          <iframe id="mapFrame" class="map" src="" loading="lazy"></iframe>
+        </div>
+
+        <div class="card contact-card">
+          <div class="section-head">
+            <h2>Contact</h2>
+            <p>Quick ways for customers to reach you.</p>
+          </div>
+          <div class="info-grid" style="grid-template-columns:1fr;gap:14px" id="contactGrid"></div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">© 2026 <span id="footerName"></span>. All rights reserved.</div>
+  </footer>
+
+  <script>
+    fetch('/content/site.json')
+      .then(r => r.json())
+      .then(data => {
+        const q = s => document.querySelector(s);
+        q('#brandName').textContent = data.businessName;
+        q('#footerName').textContent = data.businessName;
+        q('#eyebrow').textContent = data.eyebrow;
+        q('#tagline').textContent = data.tagline;
+        q('#description').textContent = data.description;
+        q('#heroImage').src = data.gallery?.[0]?.image || '/editor-logo.png';
+        q('#callBtn').href = 'tel:' + data.phoneDigits;
+        q('#callBtn').textContent = 'Call ' + data.phone;
+        q('#callBtn2').href = 'tel:' + data.phoneDigits;
+        q('#textBtn').href = 'sms:' + data.textDigits;
+        q('#textBtn').textContent = 'Text ' + data.textPhone;
+        q('#textBtn2').href = 'sms:' + data.textDigits;
+        q('#instaBtn').href = 'https://instagram.com/' + data.instagram;
+        q('#bookBtnHero').href = data.bookingUrl;
+        q('#bookBtnSection').href = data.bookingUrl;
+        q('#addressText').textContent = data.address;
+        q('#mapFrame').src = 'https://www.google.com/maps?q=' + encodeURIComponent(data.address) + '&output=embed';
+
+        const infoItems = [
+          ['Phone', '<a href="tel:' + data.phoneDigits + '">' + data.phone + '</a>'],
+          ['Text', '<a href="sms:' + data.textDigits + '">' + data.textPhone + '</a>'],
+          ['Instagram', '<a target="_blank" rel="noopener" href="https://instagram.com/' + data.instagram + '">@' + data.instagram + '</a>'],
+          ['Address', data.address]
+        ];
+        q('#infoGrid').innerHTML = infoItems.map(([label, value]) =>
+          '<div class="card info-card"><span class="label">' + label + '</span><span class="value">' + value + '</span></div>'
+        ).join('');
+
+        q('#contactGrid').innerHTML = [
+          ['Phone', '<a href="tel:' + data.phoneDigits + '">' + data.phone + '</a>'],
+          ['Text', '<a href="sms:' + data.textDigits + '">' + data.textPhone + '</a>'],
+          ['Email', '<a href="mailto:' + data.email + '">' + data.email + '</a>'],
+          ['Instagram', '<a target="_blank" rel="noopener" href="https://instagram.com/' + data.instagram + '">@' + data.instagram + '</a>']
+        ].map(([label, value]) =>
+          '<div class="card info-card"><span class="label">' + label + '</span><span class="value">' + value + '</span></div>'
+        ).join('');
+
+        q('#servicesGrid').innerHTML = data.services.map(s =>
+          '<article class="service-card"><h3>' + s.title + '</h3><p>' + s.description + '</p></article>'
+        ).join('');
+
+        q('#galleryGrid').innerHTML = data.gallery.map(g =>
+          '<figure class="gallery-card"><img src="' + g.image + '" alt="' + g.caption + '"><figcaption>' + g.caption + '</figcaption></figure>'
+        ).join('');
+
+        q('#reviewsGrid').innerHTML = data.reviews.map(r =>
+          '<article class="review-card"><div class="review-head"><div><h3>' + r.name + '</h3><div class="review-meta">' + r.meta +
+          '</div></div><div class="stars">' + r.stars + '</div></div><p>' + r.text + '</p></article>'
+        ).join('');
+
+        q('#faqList').innerHTML = data.faq.map(f =>
+          '<div class="faq-item"><strong>' + f.question + '</strong>' + f.answer + '</div>'
+        ).join('');
+      });
+  </script>
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on('init', user => {
+        if (!user) {
+          window.netlifyIdentity.on('login', () => {
+            document.location.href = '/admin/';
+          });
+        }
+      });
+    }
+  </script>
+</body>
+</html>
