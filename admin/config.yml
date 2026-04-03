@@ -12,10 +12,15 @@ collections:
     label: "Site Content"
     files:
       - label: "Main Content"
-        name: "site"
+        name: "sitte"      
         file: "content/site.json"
         fields:
-          - { label: "Business Name", name: "business_name", widget: "string" }
+          
           - { label: "Phone", name: "phone", widget: "string" }
-          - { label: "Booking URL", name: "booking_url", widget: "string" }
-          - { label: "Gallery", name: "gallery", widget: "list", field: {label: Image, name: image, widget: image} }
+          - { label: "Booking URL", name: "bookingUrl", widget: "string" }
+          - { label: "Business Name", name: "businessName", widget: "string" }
+          - label: "Gallery"
+            name: "gallery"
+            widget: "list"
+            fields:
+              - { label: "Image", name: "image", widget: "image" }
