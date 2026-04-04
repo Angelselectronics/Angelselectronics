@@ -26,15 +26,18 @@
     .nav{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:14px 0}
     .brand{display:flex;align-items:center;gap:12px;min-width:0}
     .brand img {
-  height: 48px;
+  height: 64px;
   width: auto;
   object-fit: contain;
-
-  border-radius: 8px;
+  background: rgba(255,255,255,0.04);
+padding: 6px 10px;
+border-radius: 10px;
+border: 1px solid rgba(0,153,255,0.2);
+box-shadow: 0 0 20px rgba(0,153,255,0.15);
 
   /* aggressive glow */
-  filter: drop-shadow(0 0 6px rgba(0,153,255,0.6))
-          drop-shadow(0 0 12px rgba(0,153,255,0.3));
+  filter: drop-shadow(0 0 8px rgba(0,153,255,0.8))
+        drop-shadow(0 0 18px rgba(0,153,255,0.5));
 
   transition: all 0.3s ease;
 }
