@@ -337,11 +337,11 @@ if (galleryGrid) {
         document.getElementById('brandsRow').innerHTML = brands.map(b => '<span class="chip">' + b + '</span>').join('');
         document.getElementById('reviewsGrid').innerHTML = reviews.map(r => '<article class="card review-card"><div class="review-top"><div><h3>' + (r.name || 'Customer') + '</h3></div><div class="stars">★★★★★</div></div><p>' + (r.text || '') + '</p></article>').join('');
         document.getElementById('contactStack').innerHTML = [
-          ['Call', 'tel:' + phoneDigits, data.phoneMain || ''],
-          ['Text', 'sms:' + textDigits, data.phoneText || ''],
-          ['Email', 'mailto:' + (data.email || ''), data.email || ''],
-          ['Instagram', instaUrl, '@' + ((instaUrl.split('/').filter(Boolean).pop()) || 'angels_electronics')]
-        ].map(([label, href, text]) => '<a class="btn btn-secondary" href="' + href + '"' + (label === 'Instagram' ? ' target="_blank" rel="noopener"' : '') + '>' + label + ': ' + text + '</a>').join('');
+  ['Call', 'tel:' + phoneDigits, 'Call Now'],
+  ['Text', 'sms:' + textDigits, 'Text Now'],
+  ['Book', data.bookingUrl || '#', 'Book Appointment'],
+  ['Instagram', instaUrl, 'View Instagram']
+].map(([label, href, text]) => '<a class="btn btn-secondary" href="' + href + '"' + ((label === 'Instagram' || label === 'Book') ? ' target="_blank" rel="noopener"' : '') + '>' + label + ': ' + text + '</a>').join('');
       });
   </script>
 </body>
