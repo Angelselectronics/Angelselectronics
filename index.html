@@ -217,15 +217,16 @@
         const textDigits = (data.phoneText || '').replace(/\D/g, '');
         const instaUrl = data.instagram || '#';
         const gallery = data.gallery || [];
-
+        
 const galleryGrid = document.getElementById('galleryGrid');
+console.log(gallery);
 
 if (galleryGrid) {
   galleryGrid.innerHTML = gallery.map((g, i) => `
-    <div class="gallery-item">
-      <img src="${g.image}" alt="Gallery ${i+1}" />
-    </div>
-  `).join('');
+  <div class="gallery-item">
+    <img src="${g.image}" alt="Gallery ${i+1}" />
+  </div>
+`).join('');
 }
         const services = data.services || [];
         const reviews = data.reviews || [];
