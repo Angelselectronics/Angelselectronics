@@ -25,7 +25,25 @@
     header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(6,10,15,.76);border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:14px 0}
     .brand{display:flex;align-items:center;gap:12px;min-width:0}
-    .brand img{width:48px;height:48px;object-fit:cover;border-radius:14px;border:1px solid var(--line);box-shadow:var(--shadow)}
+    .brand img {
+  height: 48px;
+  width: auto;
+  object-fit: contain;
+
+  border-radius: 8px;
+
+  /* aggressive glow */
+  filter: drop-shadow(0 0 6px rgba(0,153,255,0.6))
+          drop-shadow(0 0 12px rgba(0,153,255,0.3));
+
+  transition: all 0.3s ease;
+}
+
+.brand img:hover {
+  transform: scale(1.08);
+  filter: drop-shadow(0 0 10px rgba(0,153,255,0.9))
+          drop-shadow(0 0 20px rgba(0,153,255,0.5));
+}
     .brand-name{font-weight:900;text-transform:uppercase;line-height:1.02;letter-spacing:.7px}
     .brand-name small{display:block;color:var(--blue);font-size:.72rem;letter-spacing:1.4px;margin-top:4px}
     nav ul{display:flex;list-style:none;gap:18px;margin:0;padding:0;color:var(--muted)}
@@ -81,7 +99,7 @@
   <header>
     <div class="container nav">
       <a class="brand" href="#top">
-       <img src="logo.png" alt="Logo">
+       <img src="logo.png" alt="Logo" class="logo">
         <div class="brand-name"><span id="businessName"></span><small id="locationSmall"></small></div>
       </a>
       <nav>
