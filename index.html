@@ -327,12 +327,12 @@ if (galleryGrid) {
         setLink('quoteTextBtn', 'sms:' + textDigits, 'Text for Quote');
         setLink('quoteEmailBtn', 'mailto:' + (data.email || ''), 'Email the Shop');
 
-        document.getElementById('infoGrid').innerHTML = [
-          ['Phone', '<a href="tel:' + phoneDigits + '">Call Now</a>'],
-          ['Text', '<a href="sms:' + textDigits + '">Text Now</a>'],
-          ['Email', '<a href="mailto:' + (data.email || '') + '">' + (data.email || '') + '</a>'],
-          ['Location', data.location || '']
-        ].map(([label, value]) => '<div class="card info-card"><span class="label">' + label + '</span><span class="value">' + value + '</span></div>').join('');
+       document.getElementById('infoGrid').innerHTML = [
+  ['Contact', '<a href="tel:' + phoneDigits + '">Call Now</a>'],
+  ['Text', '<a href="sms:' + textDigits + '">Text Now</a>'],
+  ['Book', '<a href="' + (data.bookingUrl || '#') + '" target="_blank" rel="noopener">Book Appointment</a>'],
+  ['Instagram', '<a href="' + instaUrl + '" target="_blank" rel="noopener">View Instagram</a>']
+].map(([label, value]) => '<div class="card info-card"><span class="label">' + label + '</span><span class="value">' + value + '</span></div>').join('');
 
         document.getElementById('servicesGrid').innerHTML = services.map(s => '<article class="card service-card"><h3>' + s + '</h3><p>Professional installation with a clean finish built to match the Angels Electronics style.</p></article>').join('');
         document.getElementById('brandsRow').innerHTML = brands.map(b => '<span class="chip">' + b + '</span>').join('');
