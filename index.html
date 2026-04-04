@@ -18,10 +18,54 @@
       linear-gradient(180deg,#06090d,#0b1017 34%,#101720);}
     img{display:block;max-width:100%} a{text-decoration:none;color:inherit}
     .container{width:min(var(--max),92%);margin:0 auto}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:14px 22px;min-height:54px;border-radius:16px;border:1px solid var(--line);font-weight:800;transition:.18s ease}
-    .btn:hover{transform:translateY(-1px);box-shadow:0 10px 30px rgba(0,0,0,.25)}
-    .btn-primary{background:linear-gradient(180deg,#f03445,#c81828);color:#fff}
-    .btn-secondary{background:rgba(255,255,255,.04)}
+    .btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  padding:16px 26px;
+  min-height:60px;
+  border-radius:16px;
+  font-weight:900;
+  letter-spacing:.5px;
+  text-transform:uppercase;
+  transition:all .2s ease;
+  border:none;
+  cursor:pointer;
+}
+
+.btn:hover{
+  transform:translateY(-3px) scale(1.03);
+}
+
+/* 🔴 CALL BUTTON (dominant) */
+.btn-primary{
+  background:linear-gradient(180deg,#ff2d3f,#b31224);
+  color:#fff;
+  box-shadow:
+    0 0 20px rgba(255,45,63,0.5),
+    0 10px 30px rgba(0,0,0,.4);
+}
+
+.btn-primary:hover{
+  box-shadow:
+    0 0 30px rgba(255,45,63,0.8),
+    0 15px 40px rgba(0,0,0,.5);
+}
+
+/* 🔵 TEXT BUTTON */
+.btn-secondary{
+  background:rgba(0,153,255,0.12);
+  color:#fff;
+  border:1px solid rgba(0,153,255,0.4);
+  box-shadow:
+    0 0 18px rgba(0,153,255,0.25);
+}
+
+.btn-secondary:hover{
+  background:rgba(0,153,255,0.2);
+  box-shadow:
+    0 0 28px rgba(0,153,255,0.45);
+}
     header{position:sticky;top:0;z-index:50;backdrop-filter:blur(14px);background:rgba(6,10,15,.76);border-bottom:1px solid rgba(255,255,255,.06)}
     .nav{display:flex;justify-content:space-between;align-items:center;gap:18px;padding:14px 0}
     .brand{display:flex;align-items:center;gap:12px;min-width:0}
@@ -58,7 +102,12 @@ box-shadow: 0 0 20px rgba(0,153,255,0.15);
     .eyebrow{display:inline-block;color:var(--blue);font-size:.8rem;font-weight:900;letter-spacing:2px;text-transform:uppercase;margin-bottom:12px}
     h1{margin:0 0 16px;font-size:clamp(2.8rem,7vw,5.8rem);line-height:.93;text-transform:uppercase}
     .lead{margin:0;max-width:720px;color:var(--muted);font-size:1.08rem}
-    .cta-row{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+    .cta-row{
+  display:flex;
+  flex-wrap:wrap;
+  gap:16px;
+  margin-top:36px;
+}
     .card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:28px;box-shadow:var(--shadow)}
     .hero-card{padding:24px}
     .hero-card h2{margin:0 0 14px;font-size:1rem;text-transform:uppercase;letter-spacing:1px}
