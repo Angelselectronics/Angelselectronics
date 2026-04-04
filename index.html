@@ -219,7 +219,6 @@
         const gallery = data.gallery || [];
         
 const galleryGrid = document.getElementById('galleryGrid');
-console.log(gallery);
 
 if (galleryGrid) {
   galleryGrid.innerHTML = gallery.map((g, i) => `
@@ -266,7 +265,6 @@ if (galleryGrid) {
 
         document.getElementById('servicesGrid').innerHTML = services.map(s => '<article class="card service-card"><h3>' + s + '</h3><p>Professional installation with a clean finish built to match the Angels Electronics style.</p></article>').join('');
         document.getElementById('brandsRow').innerHTML = brands.map(b => '<span class="chip">' + b + '</span>').join('');
-        document.getElementById('galleryGrid').innerHTML = gallery.map((g, i) => '<figure class="card gallery-card"><img src="' + g.image + '" alt="' + (g.caption || ('Gallery image ' + (i+1))) + '"><figcaption class="gallery-caption">' + (g.caption || 'Angels Electronics Work') + '</figcaption></figure>').join('');
         document.getElementById('reviewsGrid').innerHTML = reviews.map(r => '<article class="card review-card"><div class="review-top"><div><h3>' + (r.name || 'Customer') + '</h3></div><div class="stars">★★★★★</div></div><p>' + (r.text || '') + '</p></article>').join('');
         document.getElementById('contactStack').innerHTML = [
           ['Call', 'tel:' + phoneDigits, data.phoneMain || ''],
