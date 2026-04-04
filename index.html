@@ -328,8 +328,8 @@ if (galleryGrid) {
         setLink('quoteEmailBtn', 'mailto:' + (data.email || ''), 'Email the Shop');
 
         document.getElementById('infoGrid').innerHTML = [
-          ['Phone', '<a href="tel:' + phoneDigits + '">' + (data.phoneMain || '') + '</a>'],
-          ['Text', '<a href="sms:' + textDigits + '">' + (data.phoneText || '') + '</a>'],
+          ['Phone', '<a href="tel:' + phoneDigits + '">Call Now</a>'],
+          ['Text', '<a href="sms:' + textDigits + '">Text Now</a>'],
           ['Email', '<a href="mailto:' + (data.email || '') + '">' + (data.email || '') + '</a>'],
           ['Location', data.location || '']
         ].map(([label, value]) => '<div class="card info-card"><span class="label">' + label + '</span><span class="value">' + value + '</span></div>').join('');
