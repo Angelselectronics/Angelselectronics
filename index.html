@@ -197,6 +197,39 @@ box-shadow: 0 0 20px rgba(0,153,255,0.15);
     footer{border-top:1px solid rgba(255,255,255,.06);padding:28px 0 40px;color:var(--muted);font-size:.94rem}
     @media (max-width:1020px){nav ul{display:none}.hero-inner,.business-grid{grid-template-columns:1fr}.service-grid,.gallery-grid,.info-grid,.reviews-grid{grid-template-columns:1fr 1fr}}
     @media (max-width:680px){section{padding:58px 0}.hero-inner{padding:58px 0 52px}.cta-row{flex-direction:column}.btn{width:100%}.mini-grid,.service-grid,.gallery-grid,.info-grid,.reviews-grid{grid-template-columns:1fr}h1{font-size:2.5rem}.hero-card,.service-card,.review-card,.contact-card,.booking-card{padding:18px}}
+    }
+    #infoGrid{
+  display:block !important;
+}
+
+.quote-card-full{
+  width:100%;
+  padding:40px;
+  border-radius:24px;
+  background:linear-gradient(180deg, rgba(20,20,20,.9), rgba(5,5,5,.95));
+  border:1px solid rgba(255,255,255,.08);
+  box-shadow:0 0 60px rgba(255,0,0,.15);
+}
+
+.quote-card-full h2{
+  margin:0 0 12px;
+  font-size:clamp(2rem,4vw,3.2rem);
+  text-transform:uppercase;
+  line-height:.95;
+}
+
+.quote-card-full p{
+  margin:0 0 20px;
+  color:var(--muted);
+  max-width:720px;
+}
+
+.quote-card-full .stack{
+  display:flex;
+  flex-direction:column;
+  gap:14px;
+  max-width:760px;
+  }
   </style>
 </head>
 <body>
@@ -313,16 +346,7 @@ box-shadow: 0 0 20px rgba(0,153,255,0.15);
           </div>
           <div class="stack" id="contactStack"></div>
         </div>
-        <div class="card contact-card">
-          <div class="section-head">
-            <h2>Need a quick quote?</h2>
-            <p>Text the booking line with your vehicle year, make, model, and the service you want.</p>
-          </div>
-          <div class="stack">
-            <a class="btn btn-primary" id="quoteTextBtn" href="#">Text for Quote</a>
-            <a class="btn btn-secondary" id="quoteEmailBtn" href="#">Email the Shop</a>
-          </div>
-        </div>
+        
       </div>
     </section>
   </main>
@@ -378,12 +402,16 @@ if (galleryGrid) {
         setLink('quoteTextBtn', 'sms:' + textDigits, 'Text for Quote');
         setLink('quoteEmailBtn', 'mailto:' + (data.email || ''), 'Email the Shop');
 
-       document.getElementById('infoGrid').innerHTML = [
-  ['Call', '<a href="tel:' + phoneDigits + '">Call Now</a>'],
-  ['Text', '<a href="sms:' + textDigits + '">Text Now</a>'],
-  ['Book', '<a href="' + (data.bookingUrl || '#') + '" target="_blank" rel="noopener">Book Now</a>'],
-  ['Social', '<a href="' + instaUrl + '" target="_blank" rel="noopener">Instagram</a>']
-].map(([label, value]) => '<div class="card info-card"><span class="label">' + label + '</span><span class="value">' + value + '</span></div>').join('');
+       document.getElementById('infoGrid').innerHTML = `
+  <div class="card quote-card-full">
+    <h2>Need a Quick Quote?</h2>
+    <p>Text the booking line with your vehicle year, make, model, and the service you want.</p>
+    <div class="stack">
+      <a id="quoteTextBtn" class="btn btn-primary" href="#">Text for Quote</a>
+      <a id="quoteEmailBtn" class="btn btn-secondary" href="#">Email the Shop</a>
+    </div>
+  </div>
+`;
         document.getElementById('servicesGrid').innerHTML = services.map(s => '<article class="card service-card"><h3>' + s + '</h3><p>Professional installation with a clean finish built to match the Angels Electronics style.</p></article>').join('');
         document.getElementById('brandsRow').innerHTML = brands.map(b => '<span class="chip">' + b + '</span>').join('');
         document.getElementById('reviewsGrid').innerHTML = reviews.map(r => '<article class="card review-card"><div class="review-top"><div><h3>' + (r.name || 'Customer') + '</h3></div><div class="stars">★★★★★</div></div><p>' + (r.text || '') + '</p></article>').join('');
