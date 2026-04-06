@@ -387,10 +387,11 @@ if (galleryGrid) {
         document.getElementById('map').src = 'https://www.google.com/maps?q=' + encodeURIComponent(data.location || '') + '&output=embed';
 
         const setLink = (id, href, text) => {
-          const el = document.getElementById(id);
-          el.href = href;
-          if (text) el.textContent = text;
-        };
+  const el = document.getElementById(id);
+  if (!el) return;
+  el.href = href;
+  if (text) el.textContent = text;
+};
 
         setLink('callBtn', 'tel:' + phoneDigits, 'Call Now');
         setLink('callBtn2', 'tel:' + phoneDigits, 'Call Now');
@@ -399,10 +400,8 @@ if (galleryGrid) {
         setLink('bookBtnHero', data.bookingUrl || '#', 'Book Appointment');
         setLink('bookBtnSection', data.bookingUrl || '#', 'Open Booking Calendar');
         setLink('igBtn', instaUrl, 'Instagram');
-        setLink('quoteTextBtn', 'sms:' + textDigits, 'Text for Quote');
-        setLink('quoteEmailBtn', 'mailto:' + (data.email || ''), 'Email the Shop');
 
-       document.getElementById('infoGrid').innerHTML = `
+        document.getElementById('infoGrid').innerHTML = `
   <div class="card quote-card-full">
     <h2>Need a Quick Quote?</h2>
     <p>Text the booking line with your vehicle year, make, model, and the service you want.</p>
@@ -412,6 +411,8 @@ if (galleryGrid) {
     </div>
   </div>
 `;
+setLink('quoteTextBtn', 'sms:' + textDigits, 'Text for Quote');
+setLink('quoteEmailBtn', 'mailto:' + (data.email || ''), 'Email the Shop');
         document.getElementById('servicesGrid').innerHTML = services.map(s => '<article class="card service-card"><h3>' + s + '</h3><p>Professional installation with a clean finish built to match the Angels Electronics style.</p></article>').join('');
         document.getElementById('brandsRow').innerHTML = brands.map(b => '<span class="chip">' + b + '</span>').join('');
         document.getElementById('reviewsGrid').innerHTML = reviews.map(r => '<article class="card review-card"><div class="review-top"><div><h3>' + (r.name || 'Customer') + '</h3></div><div class="stars">★★★★★</div></div><p>' + (r.text || '') + '</p></article>').join('');
