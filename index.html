@@ -43,16 +43,22 @@
   margin:0;
   font-family:Arial,Helvetica,sans-serif;
   color:var(--text);
-  background:
-  linear-gradient(
-    to bottom,
-    rgba(8,10,18,.15) 0%,
-    rgba(8,10,18,.30) 20%,
-    rgba(8,10,18,.50) 45%,
-    rgba(8,10,18,.70) 75%,
-    rgba(8,10,18,.82) 100%
-  ),
-  url("shop-background.jpg") center center / 110% no-repeat fixed;
+  background-color:#090d12;
+
+  background-image:
+    linear-gradient(
+      to bottom,
+      rgba(8,10,18,.20) 0%,
+      rgba(8,10,18,.35) 25%,
+      rgba(8,10,18,.60) 60%,
+      rgba(8,10,18,.85) 100%
+    ),
+    url("shop-background.jpg");
+
+  background-position:center top;
+  background-size:100% auto;
+  background-repeat:no-repeat;
+  background-attachment:fixed;
 }
 header{
   background:rgba(8,10,18,.55);
